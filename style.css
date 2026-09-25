@@ -1,0 +1,155 @@
+:root {
+	--blue: #2563eb;
+	--blue-dark: #1d4ed8;
+	--text: #263244;
+	--muted: #64748b;
+	--border: #dbe3ee;
+	--background: linear-gradient(30deg, #a30000, #080808);
+	--white: #ffffff;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	padding: 32px 16px;
+	color: var(--text);
+	font-family: Arial, sans-serif;
+	background: var(--background);
+}
+
+main {
+	width: min(100%, 680px);
+	margin: 0 auto;
+	background: var(--white);
+	border: 1px solid var(--border);
+	border-radius: 12px;
+	box-shadow: 0 10px 28px rgba(38, 50, 68, 0.08);
+}
+
+header {
+	padding: 32px 40px 24px;
+	border-bottom: 1px solid var(--border);
+}
+
+h1 {
+	margin: 0;
+	color: transparent;
+	font-size: clamp(2rem, 5vw, 3rem);
+	line-height: 1.05;
+	background: linear-gradient(90deg, var(--blue-dark), #60a5fa);
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+
+form {
+	display: grid;
+	gap: 10px;
+	padding: 32px 40px 36px;
+}
+
+form br {
+	display: none;
+}
+
+form > label {
+	margin-top: 12px;
+	font-size: 0.95rem;
+	font-weight: 700;
+}
+
+input[type='text'] {
+	width: 100%;
+	min-height: 44px;
+	padding: 10px 12px;
+	color: var(--text);
+	font: inherit;
+	background: var(--white);
+	border: 1px solid var(--border);
+	border-radius: 6px;
+	outline: none;
+}
+
+input[type='text']:focus {
+	border-color: var(--blue);
+	box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+input[type='radio'] {
+	width: 16px;
+	height: 16px;
+	margin: 0 7px 0 0;
+	accent-color: var(--blue);
+	vertical-align: middle;
+}
+
+.radio-options {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 4px;
+}
+
+.radio-options label {
+	display: inline-flex;
+	align-items: center;
+	padding: 9px 12px;
+	color: var(--muted);
+	font-size: 0.85rem;
+	font-weight: 600;
+	border: 1px solid var(--border);
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.radio-options label:hover,
+.radio-options label:has(input:checked) {
+	color: var(--blue-dark);
+	border-color: var(--blue);
+	background: #eff6ff;
+}
+
+#enviar {
+	min-height: 46px;
+	margin-top: 18px;
+	color: var(--white);
+	font: inherit;
+	font-weight: 700;
+	background: linear-gradient(90deg, var(--blue-dark), var(--blue));
+	border: 0;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+#enviar:hover {
+	background: linear-gradient(90deg, #1e40af, var(--blue-dark));
+}
+
+footer {
+	padding: 16px 40px;
+	color: var(--muted);
+	text-align: center;
+	border-top: 1px solid var(--border);
+}
+
+h2 {
+	margin: 0;
+	font-size: 0.78rem;
+	font-weight: 400;
+}
+
+@media (max-width: 600px) {
+	body {
+		padding: 16px 10px;
+	}
+
+	header,
+	form,
+	footer {
+		padding-right: 22px;
+		padding-left: 22px;
+	}
+}
